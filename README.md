@@ -57,7 +57,7 @@ mutation CreateConversations($input: [ConversationCreateInput!]!) {
 ```
 
 
-## Subscribe to messageRelationShipCreated
+## Subscribe to messageRelationshipCreated
 
 ### GraphQL Subscription
 
