@@ -199,3 +199,41 @@ mutation CreateMessages($input: [MessageCreateInput!]!) {
   }
 }
 ```
+
+## Messages Query
+
+Now running the following query:
+
+```GraphQL
+query Messages {
+  messages {
+   id
+   body
+   sender {
+     id
+   }
+   seen {
+     id
+   }
+  }
+}
+```
+
+results in:
+
+```JSON
+{
+  "data": {
+    "messages": [
+      {
+        "id": "e4e4d3bc-b2b9-4f3f-8b39-7fbaf089670c",
+        "body": "Welcome to you!",
+        "sender": {
+          "id": "6015e398-3e93-4f61-a035-47abd5b969ad"
+        },
+        "seen": []
+      }
+    ]
+  }
+}
+```
