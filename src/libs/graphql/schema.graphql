@@ -1,0 +1,34 @@
+type User {
+  id: ID! @id @unique
+  name: String
+  conversations: [Conversation!]!
+    @relationship(type: "CONVERSATIONS_USERS", direction: IN)
+  seenMessages: [Message!]!
+    @relationship(type: "SEEN_MESSAGES_USERS", direction: IN)
+
+  messages: [Message!]! @relationship(type: "MESSAGES_SENDER", direction: OUT)
+}
+
+type Conversation {
+  id: ID! @id @unique
+  name: String
+
+  messages: [Message!]!
+    @relationship(type: "CONVERSATION_MESSAGES", direction: IN)
+  users: [User!]! @relationship(type: "CONVERSATIONS_USERS", direction: OUT)
+}
+
+type Message {
+  id: ID! @id @unique
+  body: String
+
+  seen: [User!]! @relationship(type: "SEEN_MESSAGES_USERS", direction: OUT)
+  conversation: Conversation
+    @relationship(type: "CONVERSATION_MESSAGES", direction: OUT)
+
+  sender: User @relationship(type: "MESSAGES_SENDER", direction: IN)
+}
+
+type Subscription {
+  messageCreated(conversationId: ID!): Message
+}

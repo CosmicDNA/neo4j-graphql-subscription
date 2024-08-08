@@ -1,0 +1,56 @@
+{
+  "name": "sentiment-chat-graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "daniel@cosmicdna.co.uk",
+    "url": "https://www.cosmicdna.co.uk"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.9.0",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.5",
+    "@graphql-tools/schema": "^10.0.4",
+    "@neo4j/graphql": "^5.5.2",
+    "@neo4j/graphql-ogm": "^5.5.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "graphql-ws": "^5.16.0",
+    "jsonwebtoken": "^9.0.2",
+    "neo4j-driver": "^5.23.0",
+    "next-auth": "^4.24.7",
+    "ws": "^8.18.0"
+  }
+}
